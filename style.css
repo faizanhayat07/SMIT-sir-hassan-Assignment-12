@@ -1,0 +1,200 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  min-height: 100vh;
+  width: 100%;
+}
+/* navbar section */
+header {
+  background-color: #11151e;
+  color: #fff;
+}
+span {
+  color: red;
+}
+.navbar {
+  padding: 25px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.menu a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 18px;
+}
+.menu {
+  display: flex;
+  gap: 30px;
+}
+.menu a:hover {
+  text-decoration: underline;
+  color: red;
+}
+#icon {
+  display: none;
+  color: #fff;
+}
+/* hero section */
+
+.newssection {
+  background-image:
+    linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
+    url("image/background2.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 100vh;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+.live {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  position: relative;
+  top: 20px;
+  left: 20px;
+  font-size: 10px;
+  color: #fff;
+  height: 40px;
+  width: 100px;
+  text-align: center;
+  background-color: red;
+}
+.news {
+  background-color: rgba(0, 0, 0, 0.5);
+  margin-bottom: 10px;
+  position: absolute;
+  bottom: 10px;
+  left: 20px;
+}
+.news p {
+  font-size: 16px;
+}
+/* story section */
+.storys {
+  display: flex;
+  flex-direction: column;
+}
+.storys h2 {
+  text-align: center;
+  margin-top: 40px;
+}
+.story1 {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  margin-left: 40px;
+}
+.traffic {
+  height: 200px;
+  width: 300px;
+}
+.story2 {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  margin-left: 40px;
+}
+
+.ik {
+  height: 200px;
+  width: 300px;
+}
+.story3 {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  margin-left: 40px;
+}
+
+.rain {
+  height: 200px;
+  width: 300px;
+}
+.story4 {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  margin-left: 40px;
+}
+
+.power {
+  height: 200px;
+  width: 300px;
+}
+/* whatsapp icon */
+.whatsapp{
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 1000;
+}
+.whatsapp img{
+    width: 40px;
+    height: 40px;
+}
+/* aboutus section */
+.aboutus{
+  text-align: center;
+  padding: 30px;
+  background-color: rgba(0, 0, 0, 0.5); 
+  color: #fff;
+}
+.aboutus h2{
+  margin-bottom: 20px;
+}
+/* footer */
+footer{
+  text-align: center;
+  padding: 10px;
+}
+@media  (max-width:720px) {
+  /* navbar */
+  #icon {
+  display: block;
+  color: #fff;
+}
+.menu a{
+  display: none;
+}
+/* Story cards  */
+.story1, .story2, .story3, .story4 {
+    flex-direction: column;
+    margin-left: 15px;
+    margin-right: 15px;
+  }
+  .traffic, .ik, .rain, .power {
+    width: 100%;
+    height: 180px;
+  }
+  /*  Live badge aur news text */
+  .live {
+    font-size: 10px;
+    width: 80px;
+    height: 35px;
+  }
+  .news p {
+    font-size: 13px;
+  }
+  .news {
+    left: 10px;
+    right: 10px;
+  }
+  /* About Us aur Footer */
+  .aboutus {
+    padding: 20px 15px;
+    font-size: 14px;
+  }
+  footer {
+    font-size: 13px;
+    padding: 15px 10px;
+  }
+}
