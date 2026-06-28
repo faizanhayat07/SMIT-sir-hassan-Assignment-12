@@ -6,8 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>News Website Layout</title>
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
-        integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+    <!-- FIX 1: Font Awesome 6.x use kiya — 7.x broken CDN tha -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
         crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 
@@ -15,10 +15,11 @@
     <a href="#" class="whatsapp">
         <img src="./image/whatsapp.png" alt="whatsapp">
     </a>
+
     <header>
         <nav class="navbar">
-            <h1>News<span>Today</span></h1>
-            <div class="menu">
+            <h1>News<span class="brand-red">Today</span></h1>
+            <div class="menu" id="menu">
                 <a href="#">Home</a>
                 <a href="#">World</a>
                 <a href="#">Politics</a>
@@ -26,13 +27,15 @@
                 <a href="#">Sport</a>
                 <a href="#">Contact</a>
             </div>
-            <i id="icon" class="fa-solid fa-bars"></i>
+            <!-- FIX 2: JS se hamburger toggle kaam karta hai ab -->
+            <i id="icon" class="fa-solid fa-bars" onclick="toggleMenu()"></i>
         </nav>
     </header>
+
     <section class="newssection">
         <div class="live">
             <i id="liveicon" class="fa-solid fa-satellite-dish"></i>
-            <h2>Live News</h2>
+            <h2>Live</h2>
         </div>
         <div class="news">
             <h1>Headline:</h1>
@@ -42,63 +45,76 @@
             <p>Date: 18 June 2026</p>
         </div>
     </section>
+
     <section class="storys">
-        <h2>Top Story</h2>
-        <div class="story1">
+        <h2>Top Stories</h2>
+
+        <div class="story-card">
             <div>
-                <img src="./image/TrafficIssues.jpg" class="traffic" alt="Traffic Issues">
+                <img src="./image/TrafficIssues.jpg" class="story-img" alt="Traffic Issues">
             </div>
             <div>
                 <h3>Traffic Issues</h3>
                 <p>Traffic congestion complaints are increasing in various areas of Karachi, especially during the
-                    evening hours. 🚗🛣️ </p>
-                <span>Read more →</span>
+                    evening hours. 🚗🛣️</p>
+                <span class="read-more">Read more →</span>
             </div>
         </div>
-        <div class="story2">
+
+        <div class="story-card">
             <div>
-                <img src="./image/imrankhan.jpg" class="ik" alt="imrankhan">
+                <img src="./image/imrankhan.jpg" class="story-img" alt="Imran Khan">
             </div>
             <div>
                 <h3>Imran Khan Update</h3>
                 <p>Legal hearings related to Imran Khan are continuing in Islamabad today. Supporters gathered outside
-                    the court and chanted slogans in support of him.
-                </p>
-                <span>Read more →</span>
+                    the court and chanted slogans in support of him.</p>
+                <span class="read-more">Read more →</span>
             </div>
         </div>
-        <div class="story3">
+
+        <div class="story-card">
             <div>
-                <img src="./image/RainAlert.jpg" class="rain" alt="Rain Alert">
+                <img src="./image/RainAlert.jpg" class="story-img" alt="Rain Alert">
             </div>
             <div>
                 <h3>Rain Alert</h3>
-                <p>The weather department has predicted light rainfall in Karachi during the next two days. 🌧️ </p>
-                <span>Read more →</span>
+                <p>The weather department has predicted light rainfall in Karachi during the next two days. 🌧️</p>
+                <span class="read-more">Read more →</span>
             </div>
         </div>
-        <div class="story4">
+
+        <div class="story-card">
             <div>
-                <img src="./image/PowerLoadshedding.jpg" class="power" alt="Power Loadshedding">
+                <img src="./image/PowerLoadshedding.jpg" class="story-img" alt="Power Loadshedding">
             </div>
             <div>
                 <h3>Power Loadshedding</h3>
                 <p>Power load shedding has caused difficulties for residents across the city, especially in residential
-                    areas. ⚡🏠 </p>
-                <span>Read more →</span>
+                    areas. ⚡🏠</p>
+                <span class="read-more">Read more →</span>
             </div>
         </div>
-        <div class="story5">
-        </div>
+        <!-- FIX 3: story5 empty div remove kar diya -->
     </section>
+
     <section class="aboutus">
-        <h2>About us</h2>
+        <h2>About Us</h2>
         <p>We started NewsToday with one simple goal — real news, no fluff. No clickbait. No hidden agendas. Just
             stories that actually matter, told clearly and honestly.</p>
     </section>
+
     <footer>
         <p>© 2025 NewsToday. All rights reserved.</p>
     </footer>
-</body>
 
+    <!-- FIX 4: Hamburger menu JS -->
+    <script>
+        function toggleMenu() {
+            const menu = document.getElementById('menu');
+            menu.classList.toggle('open');
+        }
+    </script>
+
+</body>
 </html>
